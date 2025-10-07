@@ -1,4 +1,4 @@
-let telaAnterior = 'tela-home'
+   let telaAnterior = 'tela-home'
     let telaAtual = 'tela-home'
 
    function navegar(destino){
