@@ -36,7 +36,6 @@
         `
    }
 
-   // Função que carrega produtos baseado em uma categoria escolhida
 async function carregarPorCategoria(categoria) {
 
 
@@ -45,22 +44,16 @@ async function carregarPorCategoria(categoria) {
        const telaLista = document.getElementById("tela-home");
 
 
-       // Define URLs conforme categoria selecionada
        if (categoria === 'todos') {
            url = 'https://fakestoreapi.com/products';
        } else {
            url = `https://fakestoreapi.com/products/category/${categoria}`;
        }
 
-
-       // Faz requisições 
        const response = await axios.get(url);
-
 
        const produtos = response.data;
 
-
-       // Renderiza os produtos na tela principal
        telaLista.innerHTML = "";
        produtos.forEach(produto => {
            const card = document.createElement("div");
@@ -85,7 +78,6 @@ async function carregarPorCategoria(categoria) {
 }
 carregarPorCategoria('todos')
 
-// Função que carrega detalhes específicos de um produto
 async function abrirDetalhes(id) {
   try {
       const detalhesProduto = document.getElementById("detalhes-produto");
